@@ -2,17 +2,25 @@ package oop_94079_mariamakarioswirabektidamian.Week05
 
 fun main() {
 
-    val mathHelper = MathHelper()
+    val eWallet = EWallet(
+        accountName = "Wira E-Wallet",
+        balance = 50000.0
+    )
 
-    // Luas persegi
-    val luasPersegi = mathHelper.hitungLuas(5)
-    println("Luas persegi = $luasPersegi")
+    val creditCard = CreditCard(
+        accountName = "Wira Credit Card",
+        limit = 100000.0
+    )
 
-    // Luas persegi panjang
-    val luasPersegiPanjang = mathHelper.hitungLuas(10, 5)
-    println("Luas persegi panjang = $luasPersegiPanjang")
+    val paymentMethods: List<PaymentMethod> = listOf(
+        eWallet,
+        creditCard
+    )
 
-    // Luas lingkaran
-    val luasLingkaran = mathHelper.hitungLuas(7.0)
-    println("Luas lingkaran = $luasLingkaran")
+    for (paymentMethod in paymentMethods) {
+
+        println("\nMemproses pembayaran untuk ${paymentMethod.accountName}")
+
+        paymentMethod.processPayment(75000.0)
+    }
 }
