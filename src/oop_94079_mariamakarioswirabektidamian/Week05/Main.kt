@@ -22,5 +22,15 @@ fun main() {
         println("\nMemproses pembayaran untuk ${paymentMethod.accountName}")
 
         paymentMethod.processPayment(75000.0)
+
+        // Smart Casting Challenge
+        if (paymentMethod is EWallet) {
+            println("Saldo tidak cukup, melakukan Top Up...")
+
+            paymentMethod.topUp(50000.0)
+
+            println("Mencoba pembayaran kembali...")
+            paymentMethod.processPayment(75000.0)
+        }
     }
 }
