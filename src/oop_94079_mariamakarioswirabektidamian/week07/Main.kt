@@ -1,9 +1,14 @@
+
 package oop_94079_mariamakarioswirabektidamian.week07
 
 fun main() {
     println("=== TEST SINGLETON ===")
     println("Status: ${DatabaseManager.connectionStatus}")
+
     DatabaseManager.connect()
+    DatabaseManager.connect()
+
+    println("Status: ${DatabaseManager.connectionStatus}")
 
     println("\n=== TEST COMPANION OBJECT ===")
     val client = NetworkClient.createClient()
@@ -12,6 +17,7 @@ fun main() {
     println("\n=== TEST DATA CLASS ===")
     val data1 = DataUser("Alice", 22)
     val data2 = DataUser("Alice", 22)
+
     println(data1)
     println("Sama? ${data1 == data2}")
 
@@ -22,11 +28,21 @@ fun main() {
     println("Destructured: $userName berumur $userAge")
 
     println("\n=== TEST SEALED CLASS ===")
-    val response: ApiResponse = ApiResponse.Success("Data berhasil ditarik!")
+    val response: ApiResponse =
+        ApiResponse.Success("Data berhasil ditarik!")
 
-    val uiMessage = when(response) {
+    val uiMessage = when (response) {
         is ApiResponse.Loading -> "Tampilkan Spinner"
         is ApiResponse.Success -> "Tampilkan: ${response.data}"
-        is ApiResponse.Failure -> "Munculkan Alert: ${response.message}"
+        is ApiResponse.Failure ->
+            "Munculkan Alert: ${response.message}"
     }
+
+    println(uiMessage)
+
+    println("\n=== TEST GAME MANAGER ===")
+    GameManager.startGame()
+    GameManager.startGame()
+
+
 }
