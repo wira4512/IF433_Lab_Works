@@ -44,4 +44,26 @@ fun main() {
     GameManager.startGame()
     GameManager.startGame()
 
+    println("\n=== ITEM RARITY ===")
+    println(
+        "Legendary Drop Chance: " +
+                "${ItemRarity.LEGENDARY.dropChance}%"
+    )
+
+    val starterSword = Weapon.forgeStarterSword()
+
+    println("\n=== STARTER WEAPON ===")
+    println("Nama: ${starterSword.item.name}")
+    println("Damage: ${starterSword.item.damage}")
+    println("Rarity: ${starterSword.item.rarity}")
+    println("Durability: ${starterSword.durability}")
+
+    // Test Epic Sword Factory
+    val epicSword = Weapon.forgeEpicSword()
+
+    println("\n=== EPIC WEAPON ===")
+    println("Nama: ${epicSword.item.name}")
+    println("Damage: ${epicSword.item.damage}")
+    println("Rarity: ${epicSword.item.rarity}")
+    println("Durability: ${epicSword.durability}")
 }
