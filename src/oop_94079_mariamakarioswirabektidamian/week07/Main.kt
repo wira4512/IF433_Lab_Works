@@ -66,4 +66,32 @@ fun main() {
     println("Damage: ${epicSword.item.damage}")
     println("Rarity: ${epicSword.item.rarity}")
     println("Durability: ${epicSword.durability}")
+
+    println("\n=== BLACKSMITH UPGRADE ===")
+
+    val upgradedSword = starterSword.item.copy(
+        damage = 25
+    )
+
+    println("Senjata awal: ${starterSword.item.name}")
+    println("Damage awal: ${starterSword.item.damage}")
+    println("Damage setelah upgrade: ${upgradedSword.damage}")
+    println("Rarity setelah upgrade: ${upgradedSword.rarity}")
+
+    // Simulate Battle Events
+    println("\n=== BATTLE EVENTS ===")
+
+    processEvent(BattleState.SafeZone)
+
+    processEvent(
+        BattleState.MonsterEncounter("Goblin Nakal")
+    )
+
+    processEvent(
+        BattleState.LootDropped(upgradedSword)
+    )
+
+    processEvent(
+        BattleState.GameOver("Terkena jebakan racun")
+    )
 }
