@@ -1,5 +1,6 @@
 package oop_94079_mariamakarioswirabektidamian.week08
 
+
 fun main() {
     println("=== TEST SAFE CALLS & ELVIS ===")
     val emptyOrder = Order(null, null)
@@ -42,7 +43,10 @@ fun main() {
 
     println("\n=== TEST JAVA INTEROP ===")
     val javaResponse = LegacyJavaAPI.fetchServerStatus()
-// Kita menekan tombol !! karena KITA TAHU implementasi Java-nya aman
+    // Kita menekan tombol !! karena KITA TAHU implementasi Java-nya aman
     val statusLength = javaResponse!!.length
     println("Status dari Java: $javaResponse (Length: $statusLength)")
+
+    // Memanggil fungsi unit test di akhir main()
+    runMockUnitTest()
 }
