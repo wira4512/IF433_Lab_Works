@@ -12,7 +12,7 @@ fun main() {
 
     val receipt = validOrder.totalPrice?.let { price ->
         // Blok ini HANYA jalan jika totalPrice tidak null
-        val tax = price * 0.11
+        val tax = price * 0.12
         "Transaksi Valid. Harga: Rp$price, Pajak: Rp$tax"
     } ?: "Transaksi Invalid: Harga belum di-set!"
 
