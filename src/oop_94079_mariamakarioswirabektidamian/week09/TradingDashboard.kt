@@ -28,4 +28,11 @@ fun main() {
         it.roe <= 0
     }
 
+    val topPerformersString = winningTrades
+        .sortedByDescending { it.roe }
+        .map {
+            "WIN [${it.pair} - ${it.position}]: " +
+                    "${String.format(Locale.US, "%+.1f", it.roe)}% ROE " +
+                    "(Lev: ${it.leverage}x)"
+        }
 }
