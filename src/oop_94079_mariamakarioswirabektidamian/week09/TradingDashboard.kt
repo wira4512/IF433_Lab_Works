@@ -35,4 +35,13 @@ fun main() {
                     "${String.format(Locale.US, "%+.1f", it.roe)}% ROE " +
                     "(Lev: ${it.leverage}x)"
         }
+
+    val worstPerformersString = losingTrades
+        .sortedBy { it.roe }
+        .map {
+            "LOSS [${it.pair} - ${it.position}]: " +
+                    "${String.format(Locale.US, "%+.1f", it.roe)}% ROE " +
+                    "(Lev: ${it.leverage}x)"
+        }
+
 }
