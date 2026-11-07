@@ -44,4 +44,8 @@ fun main() {
                     "(Lev: ${it.leverage}x)"
         }
 
+    val uniquePairs = tradeHistory
+        .map { it.pair }
+        .toSet()
+
 }
