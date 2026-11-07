@@ -48,4 +48,10 @@ fun main() {
         .map { it.pair }
         .toSet()
 
+    println("=== CRYPTO TRADING DASHBOARD ===")
+
+    println("\n--- TOP WINNING TRADES ---")
+    topPerformersString.forEach {
+        println(it)
+    }
 }
