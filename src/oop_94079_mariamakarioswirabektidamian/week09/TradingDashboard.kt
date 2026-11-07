@@ -20,4 +20,8 @@ fun main() {
         it.status == "CLOSED"
     }
 
+    val winningTrades = closedTrades.filter {
+        it.roe > 0
+    }
+
 }
