@@ -16,4 +16,22 @@ fun main() {
     activeUsers.add("UserA") // Diabaikan karena sudah ada
     println("Active Users: $activeUsers")
 
+
+    println("\n=== TEST MAP ===")
+
+    val studentGrades = mapOf(
+        "Alice" to "A",
+        "Bob" to "B",
+        "Charlie" to "A"
+    )
+
+    println("Nilai Bob: ${studentGrades["Bob"]}")
+
+    val inventory = mutableMapOf("Apples" to 50, "Bananas" to 30)
+
+    inventory["Oranges"] = 20 // Menambah data baru
+    inventory["Apples"] = 45  // Mengupdate data lama
+
+    println("Inventory: $inventory")
+
 }
