@@ -11,6 +11,7 @@ class WalletRepository<T : Any> {
     fun getAll(): List<T> {
         return items
     }
+
     fun searchByName(query: String): List<T> {
         return items.filter { item ->
             item is Named &&
