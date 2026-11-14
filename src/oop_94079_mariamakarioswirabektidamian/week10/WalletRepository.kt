@@ -11,8 +11,6 @@ class WalletRepository<T : Any> {
     fun getAll(): List<T> {
         return items
     }
-
-    // Mencari item yang memiliki nama melalui interface Named
     fun searchByName(query: String): List<T> {
         return items.filter { item ->
             item is Named &&
