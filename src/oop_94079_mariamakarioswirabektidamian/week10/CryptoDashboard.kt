@@ -33,4 +33,19 @@ fun main() {
     // 6. Inisialisasi Transaction Repository
     val txRepo = WalletRepository<Transaction>()
 
+    // 7. Menambahkan data transaksi
+    txRepo.add(Transaction("TX001", 500.0))
+    txRepo.add(Transaction("TX002", 250.0))
+    txRepo.add(Transaction("TX003", 1000.0))
+
+    // 8. Menampilkan transaksi
+    println("\n================================")
+    println("       TRANSACTION HISTORY")
+    println("================================")
+
+    txRepo.getAll().forEach { transaction ->
+        println("Transaction ID: ${transaction.id}")
+        println("Amount: ${transaction.amount}")
+        println("----------------------------")
+    }
 }
