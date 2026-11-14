@@ -21,4 +21,16 @@ fun main() {
         println("Balance: ${coin.balance}")
         println("----------------------------")
     }
+
+    println("\nSearch Coin: BTC")
+
+    val searchResult = coinRepo.searchByName("BTC")
+
+    searchResult.forEach { coin ->
+        println("Found: ${coin.name}, Balance: ${coin.balance}")
+    }
+
+    // 6. Inisialisasi Transaction Repository
+    val txRepo = WalletRepository<Transaction>()
+
 }
