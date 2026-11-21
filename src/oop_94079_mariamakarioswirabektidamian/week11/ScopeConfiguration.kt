@@ -9,4 +9,11 @@ println("=== TEST APPLY ===")
         age = 25
     }
     println(user)
+
+    println("\n=== TEST ALSO ===")
+    val numbers = mutableListOf(1, 2, 3)
+    numbers.also {
+        println("Log sebelum ditambah: $it")
+    }.add(4)
+    println("Setelah ditambah: $numbers")
 }
