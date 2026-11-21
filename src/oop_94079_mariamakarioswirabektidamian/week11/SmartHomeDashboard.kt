@@ -57,4 +57,11 @@ fun main() {
         println("\n========== SMART HOME SUMMARY ==========")
         println("Total perangkat terdaftar: ${this.size}")
     }
+
+    // Menghitung total konsumsi daya
+    val totalPower = homeDevices.run {
+        sumOf { it.powerLoad }
+    }
+
+    println("Total konsumsi daya: $totalPower Watt")
 }
