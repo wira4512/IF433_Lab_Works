@@ -41,4 +41,14 @@ fun main() {
     homeDevices.add(
         SmartDevice("Picolo's Auto Feeder", "Pet Care", true, 10)
     )
+
+    // Mencari perangkat kategori Camera
+    val searchResult = homeDevices.find {
+        it.category == "Camera"
+    }
+
+// Menampilkan diagnosis jika perangkat ditemukan
+    searchResult?.let {
+        println(it.diagnose())
+    }
 }
